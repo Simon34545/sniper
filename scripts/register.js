@@ -15,6 +15,11 @@ const commands = [
 		name: "snipe",
 		description: "Shows the last deleted message from a specified channel!",
 		options: [
+			{
+				type: 4, // integer
+				name: "index",
+				description: "The message number to snipe",
+			},
 			channelOption,
 			{
 				type: 3, // string
@@ -36,13 +41,27 @@ const commands = [
 	{
 		name: "editsnipe",
 		description: "Shows the last edited message from a specified channel!",
-		options: [channelOption],
+		options: [
+			{
+				type: 4, // integer
+				name: "index",
+				description: "The edit number to snipe",
+			},
+			channelOption
+		],
 	},
 	{
 		name: "reactionsnipe",
 		description:
 			"Shows the last removed reaction from a specified channel!",
-		options: [channelOption],
+		options: [
+			{
+				type: 4, // integer
+				name: "index",
+				description: "The reaction number to snipe",
+			},
+			channelOption
+		],
 	},
 ];
 
