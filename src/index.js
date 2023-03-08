@@ -45,7 +45,13 @@ function parseBoolF(val) {
 
 let blacklist = [];
 
-const blacklist_buffer = fs.readFileSync(__dirname + '/blacklist.txt');
+const blacklist_buffer = (function() {
+	try {
+		return fs.readFileSync(__dirname + '/blacklist.txt');
+	} catch {
+		return [];
+	}
+})();
 blacklist = blacklist_buffer.toString().split(',');
 
 client.on('message', function(message) {
