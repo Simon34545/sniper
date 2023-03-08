@@ -24,11 +24,11 @@ const formatEmoji = (emoji) => {
 var fs = require('fs');
 var util = require('util');
 var log_file = fs.createWriteStream(__dirname + '/sniped.log', {flags : 'a'});
-//var log_stdout = process.stdout;
+var log_stdout = process.stdout;
 
 messagelog = function(d) { //
   log_file.write(util.format(d) + '\n');
-  //log_stdout.write(util.format(d) + '\n');
+  log_stdout.write(util.format(d) + '\n');
 };
 
 function formatUser(u) {
